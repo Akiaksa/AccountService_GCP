@@ -11,7 +11,7 @@ import java.util.Collections;
 public interface AccountHandleService {
 	
 	//method for registering user - signup
-	String createUser(com.sharepic.AccountService.model.User user);
+	User createUser(com.sharepic.AccountService.model.User user);
 	
 	//to get a user with given username
 	User getByUserName(String UserName);

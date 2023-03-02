@@ -25,12 +25,13 @@ public class AccountHandleServiceImpl implements AccountHandleService {
 	
 	
 	@Override
-	public String createUser(com.sharepic.AccountService.model.User user) {
+	public User createUser(com.sharepic.AccountService.model.User user) {
 		// TODO Auto-generated method stub
-			System.out.println(userMapper.mapUserModeltoEntity(user));
+			User obj = userMapper.mapUserModeltoEntity(user);
+			System.out.println(obj);
 			userRepo.saveUser(userMapper.mapUserModeltoEntity(user));
 			System.out.println("User Registered");
-			return "User Created";
+			return obj;
 		
 	}
 

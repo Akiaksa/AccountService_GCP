@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sharepic.AccountService.model	.User;
+import com.sharepic.AccountService.entity.User;
 import com.sharepic.AccountService.service.AccountHandleService;
 
 @CrossOrigin
@@ -24,12 +24,12 @@ public class AccountController {
 	
 	//end-point for registering a user
 	@PostMapping("/signup")
-	public String registerUserAccount(@RequestBody User user)
+	public User registerUserAccount(@RequestBody com.sharepic.AccountService.model.User user)
 	{
-		String status =service.createUser(user);
+		User obj =service.createUser(user);
 		System.out.println(new ResponseEntity<Void>(HttpStatus.OK));
 		System.out.println(user);
-		return status;
+		return obj;
 		
 	}
 	
